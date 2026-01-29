@@ -1,0 +1,29 @@
+﻿variable "aws_region" {
+  description = "AWS region for resources"
+  type        = string
+  default     = "us-west-2"
+}
+
+variable "service_name" {
+  description = "Name of the ECS service"
+  type        = string
+  default     = "hello-service"
+}
+
+variable "ecr_repository_name" {
+  description = "Name of the ECR repository"
+  type        = string
+  default     = "hello-service"
+}
+
+variable "desired_count" {
+  description = "Number of tasks to run"
+  type        = number
+  default     = 1
+}
+
+variable "container_port" {
+  description = "Port the container listens on"
+  type        = number
+  default     = 8080
+}

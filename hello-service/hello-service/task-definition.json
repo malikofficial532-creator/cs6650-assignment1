@@ -1,0 +1,22 @@
+{
+  "family": "hello-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::412505630639:role/LabRole",
+  "taskRoleArn": "arn:aws:iam::412505630639:role/LabRole",
+  "containerDefinitions": [
+    {
+      "name": "hello-container",
+      "image": "412505630639.dkr.ecr.us-west-2.amazonaws.com/hello-service:latest",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ]
+}
